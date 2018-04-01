@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Qvegie</string>
+
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">হোম</string>
+    <string name="nav_photos">ক্যাটাগরি</string>
+    <string name="nav_movies">অফার</string>
+    <string name="nav_notifications">নোটিফিকেশন</string>
+    <string name="nav_settings">সেটিংস</string>
+    <string name="nav_about_us">হেল্প লাইন</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>হোম</item>
+        <item>ক্যাটাগরি</item>
+        <item>অফার</item>
+        <item>নোটিফিকেশন</item>
+        <item>সেটিংস</item>
+    </string-array>
+
+    <string name="action_logout">Logout</string>
+    <string name="privacy_policy">প্রাইভেসি পলিসি</string>
+    <string name="title_activity_products">Products</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="title_activity_soday_image">SodayImageActivity</string>
+    <string name="title_activity_soday_image_confirmation">SodayImageConfirmation</string>
+    <string name="file_provider_authority" translatable="false">com.shodypati.rasel.provider</string>
+    <string name="title_activity_check_out">CheckOutActivity</string>
+    <string name="title_activity_confirm_order">ConfirmOrder</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="title_activity_medicine_list">MedicineList</string>
+
+</resources>
