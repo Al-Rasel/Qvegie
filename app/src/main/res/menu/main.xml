@@ -9,14 +9,9 @@
         android:icon="@drawable/ic_shopping_basket_white_24dp"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/signIn"
 
-        android:title="সাইন ইন"
-        android:icon="@mipmap/ic_launcher"
-        app:showAsAction="never" />
     <item
-        android:title="বন্ধুকে পাঠাও"
+        android:title="Share"
         app:showAsAction="never">
 
     </item>

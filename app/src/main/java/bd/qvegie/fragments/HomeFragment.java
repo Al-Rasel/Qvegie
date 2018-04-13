@@ -1,43 +1,32 @@
 package bd.qvegie.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bd.qvegie.R;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
 import ss.com.bannerslider.banners.Banner;
-import ss.com.bannerslider.banners.RemoteBanner;
-import ss.com.bannerslider.events.OnBannerClickListener;
+import ss.com.bannerslider.banners.DrawableBanner;
 import ss.com.bannerslider.views.BannerSlider;
 
 /**
  * Created by Rasel on 4/1/2018.
  */
 
-public class HomeFragment  extends Fragment {
+public class HomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 
-
+    BannerSlider bannerSlider;
 
 
     public HomeFragment() {
@@ -78,13 +67,74 @@ public class HomeFragment  extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ArrayList<String> categories = new ArrayList<>();
 
-
+        bannerSlider = (BannerSlider) view.findViewById(R.id.banner_slider1);
         bannersFromServer();
         getHomeCats();
+
+        clickEvents(view);
 
         return view;
 
 
+    }
+
+    private void clickEvents(View v) {
+        v.findViewById(R.id.relative_veg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment =   ProductsFragment.newInstance(0);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.commitAllowingStateLoss();
+
+            }
+        });
+        v.findViewById(R.id.relative_fruits).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment =   ProductsFragment.newInstance(1);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.commitAllowingStateLoss();
+
+            }
+        });
+        v.findViewById(R.id.relative_Exveg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment =   ProductsFragment.newInstance(2);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.commitAllowingStateLoss();
+
+            }
+        });
+        v.findViewById(R.id.relative_offers).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment =   ProductsFragment.newInstance(3);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.commitAllowingStateLoss();
+
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -131,11 +181,17 @@ public class HomeFragment  extends Fragment {
 
     public void bannersFromServer() {
 
+        List<Banner> banners = new ArrayList<>();
+
+        banners.add(new DrawableBanner(R.drawable.banner_one));
+        banners.add(new DrawableBanner(R.drawable.banner_two));
+        banners.add(new DrawableBanner(R.drawable.banner_three));
+        bannerSlider.setBanners(banners);
+
     }
 
 
     public void getHomeCats() {
-
 
 
     }
